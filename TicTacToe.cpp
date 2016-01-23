@@ -9,7 +9,6 @@
 #include <iomanip>
 #include <time.h>
 
-
 int main() {
 	srand(time(nullptr));
 	setlocale(LC_ALL, "Russian");
@@ -17,7 +16,6 @@ int main() {
 	int col = 0; // just statement
 	const int rows = 3; // for matrix
 	const int cols = 3; // for matrix
-	bool gameIsOver = false; // if not 
 	bool playerOne = true; // ' x '
 	bool playerTwo = false; // ' 0 ' 
 
@@ -38,12 +36,12 @@ int main() {
 	}
 
 	/* * * * * * * * * * * * * * * * * * * * * * * *
-	* * * * * * player choice to moving * * * * * */
+	* * * * * * player's choice to moving * * * * * */
 	while (true) {
 		if (playerOne) {
 			std::cout << std::endl << std::setw(4) << " PLAYER 1 IS MOVING " << std::endl;
 			do {
-				std::cout << "enter your move: "; // 0, 0 to 9, 9
+				std::cout << "enter your move: "; // 0, 0 to 3, 3
 				std::cin >> row;
 				std::cin >> col;
 				if (!(row >= 0 && row <= 3 && col >= 0 && col <= 3)) {
