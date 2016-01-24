@@ -7,8 +7,9 @@ language : cpp
 #include <iostream>
 #include <conio.h>
 #include <iomanip>
-#include <time.h>
+#include <ctime>
 
+/* * * V A R I A B L E S * * */
 char matrix[3][3];
 int row = 0; // just var
 int col = 0; // just var
@@ -17,9 +18,9 @@ const int cols = 3; // for matrix
 bool playerOne = true; // ' x '
 bool playerTwo = false; // ' 0 ' 
 bool isPlay = true; 
-char* alph = "1234567890-=qwert'yuiop[]asdfghjkl;zxcvbnm,./éöóêåíãøùçõúôûâàïðîëäæýÿ÷ñìèòüþ.!¹;:?*()_+";
+char* alph = "1234567890-=qwert'yuiop[]asdfghjkl;zxcvbnm,./éöóêåíãøùçõúôûâàïðîëäæýÿ÷ñìèòüþ.!¹;:?*()_+"; // buffer for getch
 
-void ReadME() {
+void ReadME() { // show instructions
 	char choice = 0;
 	do {
 		std::cout << ".............. Welcome to TicTacToe game! ............." << std::endl;
@@ -31,35 +32,35 @@ void ReadME() {
 		std::cout << "                  TO START PRESS ANY KEY                 " << std::endl;
 		choice = _getch();
 
-	} while (!strchr (alph, choice));
-	system("cls");
+	} while (!strchr (alph, choice)); // until users any key
+	system("cls"); // clear screen
 }
 
-void win() {
-	isPlay = false;
+void win() { // if win-combination are exists
+	isPlay = false; 
 	playerOne = false;
 	playerTwo = false;
 }
 
-void fillMatrix() {
+void fillMatrix() { // fill in matrix
 	for (int i(0); i < 3; i++) {
 		for (int j(0); j < 3; j++) {
-			matrix[i][j] = '-';
+			matrix[i][j] = '-'; // all elements of matrix have '-' values
 		}
 	}
 }
 
-void showMatrix() {
+void showMatrix() { // show full matrix (rows and cols)
 	for (int i(0); i < 3; i++) {
-		std::cout << " | ";
+		std::cout << " | "; 
 		for (int j(0); j < 3; j++) {
 			std::cout << matrix[i][j] << " ";
 		}
 		std::cout << " | " << std::endl;
 	}
 }
-void play() {
-	while (isPlay) {
+void play() { // TicTacToe game function
+	while (isPlay) { 
 		if (playerOne) {
 			bool problems = false;
 			bool fill = false;
