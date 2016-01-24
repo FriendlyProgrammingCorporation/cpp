@@ -93,8 +93,6 @@ void play() {
 
 			showMatrix();
 
-			playerOne = !playerOne;
-			playerTwo = !playerTwo;;
 			for (int i = 0; i < rows; i++) {
 				if (((matrix[i][0] == 'x') && (matrix[i][1] == 'x') && (matrix[i][2] == 'x'))) {
 					std::cout << " ... PLAYER 1 WINS ... " << std::endl;
@@ -111,6 +109,8 @@ void play() {
 						win();
 					}
 			}
+			playerOne = !playerOne;
+			playerTwo = !playerTwo;
 		}
 		if (playerTwo) {
 			bool problems = false;
@@ -165,12 +165,11 @@ void play() {
 }
 
 int main() {
-	srand(time(nullptr));
-	setlocale(LC_ALL, "Russian");
-	ReadME();
+	srand(time(nullptr)); // randomizer (just in case :D :D :D)
+	setlocale(LC_ALL, "Russian"); // rus localization
+	ReadME(); // instruction
 	fillMatrix(); // fill in matrix
 	showMatrix(); // show full matrix
-	play();
+	play(); // play function
 	_getch();
 }
-
