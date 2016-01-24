@@ -32,7 +32,7 @@ void ReadME() { // show instructions
 		std::cout << "                  TO START PRESS ANY KEY                 " << std::endl;
 		choice = _getch();
 
-	} while (!strchr (alph, choice)); // until users any key
+	} while (!strchr (alph, choice)); // until user enters any key
 	system("cls"); // clear screen
 }
 
