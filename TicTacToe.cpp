@@ -17,7 +17,7 @@ const int cols = 3; // for matrix
 bool playerOne = true; // ' x '
 bool playerTwo = false; // ' 0 ' 
 bool isPlay = true; 
-char* alph = "1234567890-=\`qwert'yuiop[]asdfghjkl;zxcvbnm,./йцукенгшщзхъфывапролджэячсмитью.!№;%:?*()_+";
+char* alph = "1234567890-=qwert'yuiop[]asdfghjkl;zxcvbnm,./Г©Г¶ГіГЄГҐГ­ГЈГёГ№Г§ГµГєГґГ»ГўГ ГЇГ°Г®Г«Г¤Г¦ГЅГїГ·Г±Г¬ГЁГІГјГѕ.!В№;:?*()_+";
 
 void ReadME() {
 	char choice = 0;
